@@ -22,14 +22,14 @@ fdua_v3/
 │   │   └── postprocess.py         # 抽出Markdownの後処理
 │   ├── model/
 │   │   ├── __init__.py
-│   │   └── retriever.py           # リトリーバー構築
+│   │   └── retriever.py           # Retriever構築
 │   └── tools/
 │       ├── __init__.py
-│       ├── create_docs.py         # テキスト分割、FAISSベクトルストア構築、Markdownクリーニング
+│       ├── create_docs.py         # テキスト分割、Vector DB構築、Markdownクリーニング
 │       └── text_extract.py        # 画像とテキスト情報からのMarkdown生成、会社名抽出
 └── notebooks/                     # 実行用ノートブック
     ├── 001_pdf_to_md.ipynb        # PDFをMarkdownに変換するノートブック
-    └── 002_create_answers.ipynb   # RAGを実装、答えを推論
+    └── 002_create_answers.ipynb   # RAGを実装し、答えを推論
 
 ```
 
@@ -52,3 +52,4 @@ fdua_v3/
             - Ubuntu/Debian: `sudo apt-get update && sudo apt-get install -y poppler-utils`
 3. 環境変数の設定
     - プロジェクトルートの`.env`にOpenAI APIキーなどを記述
+4. Signateからデータをダウンロードし、プロジェクトルートに`signate_data`として配置
