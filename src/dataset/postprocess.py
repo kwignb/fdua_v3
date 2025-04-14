@@ -9,16 +9,16 @@ def process_markdown_file(input_file: str, line_target_words: list, header_keywo
         - 各行に対し、line_target_words のいずれかのワードが含まれている場合、その行は除外
     2. セクション削除フィルタ:
         - 行頭が '#' のヘッダー行に対し、header_keywords のいずれかが含まれる場合、
-        そのヘッダー行から次のヘッダー行が現れるまでのすべての行（ヘッダー行自体も含む）を除外します。
+        そのヘッダー行から次のヘッダー行が現れるまでのすべての行（ヘッダー行自体も含む）を除外
     3. ページ数表記削除フィルタ:
-        - 行に "P.数字"（例: P.1）の表記が含まれている場合、その行は除外します。
+        - 行に "P.数字"（例: P.1）の表記が含まれている場合、その行は除外
 
     Parameters:
-        input_file (str): 入力Markdownファイルのパス。
-        output_file (str): 出力先Markdownファイルのパス。
-        line_target_words (list): 行単位で削除対象とするワードのリスト。
-        header_keywords (list): ヘッダー行に対して削除対象とするキーワードのリスト。
-                                ヘッダーにこれらのキーワードが含まれる場合、そのヘッダーから次のヘッダーまでを削除します。
+        input_file (str): 入力Markdownファイルのパス
+        output_file (str): 出力先Markdownファイルのパス
+        line_target_words (list): 行単位で削除対象とするワードのリスト
+        header_keywords (list): ヘッダー行に対して削除対象とするキーワードのリスト
+                                ヘッダーにこれらのキーワードが含まれる場合、そのヘッダーから次のヘッダーまでを削除
     """
 
     def clean_text(line):
