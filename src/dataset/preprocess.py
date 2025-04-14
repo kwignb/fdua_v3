@@ -10,7 +10,7 @@ import fitz
 
 def analyze_page(image):
     """
-    PDFの1ページを左右に分割するかどうかを判定する
+    PDFの1ページを左右に分割するかどうかを判定
     ステップ1: エッジ検出による分割可能性の探索
     ステップ2: ページ中央の特定の範囲が均一な配色になっているかで判定
     """
@@ -38,7 +38,7 @@ def analyze_page(image):
 
 def split_and_save_pdf(pdf_path, output_pdf_path):
     """
-    PDFを左右に分割して保存する
+    PDFを左右に分割して保存
     """
     doc = fitz.open(pdf_path)
     new_pdf = fitz.open()
@@ -81,8 +81,8 @@ def split_and_save_pdf(pdf_path, output_pdf_path):
 
 def combine_text_information(blocks, raw_text, words, tables_info):
     """
-    複数のテキスト抽出方法の結果を組み合わせて、より完全なテキスト情報を構築する。
-    表情報もblocksに挿入する。
+    複数のテキスト抽出方法の結果を組み合わせて、より完全なテキスト情報を構築
+    表情報もあわせてblocksに挿入
 
     Args:
         blocks (list): page.get_text("dict")["blocks"] の結果
@@ -157,14 +157,14 @@ def combine_text_information(blocks, raw_text, words, tables_info):
 
 def pdf_to_blocks_and_png(pdf_path, output_folder):
     """
-    PDFをページごとにPNG画像に変換し、構造化されたテキスト情報（ブロック単位）を抽出する
+    PDFをページごとにPNG画像に変換し、構造化されたテキスト情報（ブロック単位）を抽出
 
     Args:
         pdf_path (str): PDFファイルのパス
         output_folder (str): 出力フォルダのパス
 
     Returns:
-        list: ページごとのテキストブロック情報 (表情報を含む)
+        list: ページごとのテキストブロック情報 (表情報含)
         list: PNG画像のパスのリスト
     """
     os.makedirs(output_folder, exist_ok=True)
